@@ -270,6 +270,12 @@ where
         self.integral_term = integral_term.into();
         self
     }
+
+    /// Set the previous measurement, used for the derivative term.
+    pub fn set_prev_measurement(&mut self, prev_measurement: Option<T>) -> &mut Self {
+        self.prev_measurement = prev_measurement;
+        self
+    }
 }
 
 /// Saturating the input `value` according the absolute `limit` (`-abs(limit) <= output <= abs(limit)`).
